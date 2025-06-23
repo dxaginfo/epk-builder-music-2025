@@ -1,0 +1,43 @@
+{
+  "name": "digital-press-kit-builder",
+  "version": "1.0.0",
+  "description": "A web application for musicians to create, manage, and share professional electronic press kits (EPKs)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "server": "nodemon server/index.js",
+    "client": "cd client && npm start",
+    "install-client": "cd client && npm install",
+    "install-server": "cd server && npm install",
+    "install-all": "npm install && npm run install-server && npm run install-client",
+    "build-client": "cd client && npm run build",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install-client && npm run build-client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dxaginfo/epk-builder-music-2025.git"
+  },
+  "keywords": [
+    "music",
+    "press kit",
+    "epk",
+    "artist",
+    "musician",
+    "react",
+    "node",
+    "mongodb"
+  ],
+  "author": "DX AG",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dxaginfo/epk-builder-music-2025/issues"
+  },
+  "homepage": "https://github.com/dxaginfo/epk-builder-music-2025#readme",
+  "dependencies": {
+    "concurrently": "^8.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
